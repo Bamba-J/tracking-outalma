@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-button (click)="close()">
+          <ion-icon slot="icon-only" name="close"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>Devis pour {{Nom}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content  padding>
+    <div id="contains1" class="text:center">
+    <input id="input1" placeholder="Libellé 1">&nbsp;&nbsp;<input placeholder="Prix 1" id="input2">
+    <br><br>
+     </div>
+    <div id="br"><br></div>
+    <ion-button (click)="CreateInp()" >Ajouter une ligne</ion-button>
+<hr>
+
+<div >
+
+          <ion-item>
+              <ion-label>Adresse d'expédition : {{Adresse_exp}}</ion-label>
+        </ion-item>
+      <ion-item >
+          <ion-label >Adresse de livraison : {{Adresse_liv}}</ion-label>
+      </ion-item>
+      <ion-item >
+          <ion-label>Description : {{Desc_colis}}</ion-label>
+      </ion-item>
+      <ion-item >
+          <ion-label >SIte de provenance : {{Site_prov}}</ion-label>
+      </ion-item>
+      <ion-item >
+          <ion-label >Téléphone : {{Telephone}}</ion-label>
+      </ion-item>
+    <p>
+      <ion-item>
+          <ion-label> Lien d'achat : {{List_envie}} </ion-label>
+          <div *ngIf = "  List_envie  != '' ">
+            <a href="{{ List_envie }}"> aller vers</a>
+          </div>
+      </ion-item>
+    </p>
+      <ion-item >
+          <ion-label >Type d'envoi : {{Type_envoi}}</ion-label>
+          
+      </ion-item>
+</div>
+
+</ion-content>
+<ion-button expand="block" (click)="GetValInpu()">Valider le devis</ion-button>

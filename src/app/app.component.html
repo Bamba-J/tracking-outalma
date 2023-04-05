@@ -1,0 +1,47 @@
+
+    <ion-app>
+
+    <ion-split-pane color="primary">
+      <ion-menu disable><ion-content>
+          <div (click)="goToProfil()" class="profile" padding  >
+              <ion-button clear mode="ios" size="small"><ion-icon name="create" size="large" color="light" mode="md" slot="end"></ion-icon></ion-button>
+              <div class="avatar-circle">
+                  <span class="initials">{{lettre}}</span>
+                </div>
+              <h5 text-center>{{nomUser}}</h5>
+            </div>
+<br>
+        
+         <ion-list lines="none" class="itlist">
+            <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+              <ion-item [routerDirection]="'root'" [routerLink]="[p.url]" >
+                
+
+                 <ion-icon color="medium" [name]="p.icon" >
+                  </ion-icon>
+                    <ion-badge  id="notifications-badge" color="danger">{{p.tabBadge}}</ion-badge>
+                  <ion-label>
+                  {{p.title}}
+                </ion-label>
+                
+              </ion-item>
+              <hr>
+            </ion-menu-toggle>
+          
+          </ion-list>
+        </ion-content>
+        <ion-footer>
+            <ion-toolbar color="primary">
+              <ion-buttons slot="start">
+                <ion-button (click)="logOut()">
+                  <ion-icon name="log-out" slot="start"></ion-icon>
+                  Logout
+                </ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-footer>
+      </ion-menu>
+      <ion-router-outlet main></ion-router-outlet>
+    </ion-split-pane>
+    
+  </ion-app>

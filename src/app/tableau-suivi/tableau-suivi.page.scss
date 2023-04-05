@@ -1,0 +1,66 @@
+:host{
+    ion-row, ion-col{
+        border: 1px solid black;
+    }
+    ion-row{
+        min-width: 700px;
+       
+    }
+    ion-row:nth-child(even) {
+        background-color: #dddddd;
+        
+    }
+
+   li{
+      font-family: Arial, sans-serif!important; 
+      font-size: 100%!important;
+      color: black!important;
+      list-style-type: none!important;
+      background-repeat: no-repeat!important;
+      background-position: 0 0.32em!important;
+      padding-left: 15px!important;
+   }
+
+   ion-grid{
+        
+        overflow-y: auto !important; 
+        overflow-x: auto !important;
+
+
+        *::-webkit-scrollbar{
+            display:inline-block ;
+        }     
+    }
+
+    ion-grid .deux{
+      overflow-x: auto !important;
+      max-height: 200px;
+      min-width: 700px !important ;
+   //    *::-webkit-scrollbar{
+   //       display:inline-block ;
+   //   } 
+     }
+
+   .prim{
+        color:white;
+        font-weight: bold;
+        background-color: #333986!important;
+    }
+        .broown{
+            color: #A0522D;
+        }
+    .marg{
+      margin:8px;
+      color:#fff !important;
+      background-color:#343582 !important;
+    }
+}
+
+
+
+
+
+
+
+
+

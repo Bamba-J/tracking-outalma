@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>faq</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  *ngIf="!isAuth" padding>
+
+      <ion-card *ngFor="let q of question">
+        <ion-item>
+          <ion-icon name="checkmark-circle" color="success" slot="start"></ion-icon>
+          <ion-card-subtitle size="100%">{{q.titre}}</ion-card-subtitle>
+        </ion-item>
+      
+        <ion-card-content>
+          {{q.texte}}
+        </ion-card-content>
+      </ion-card>
+
+        
+
+</ion-content>

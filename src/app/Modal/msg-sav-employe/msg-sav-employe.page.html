@@ -1,0 +1,57 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-button (click)="close()">
+              <ion-icon slot="icon-only" name="close"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+      <ion-title >{{nomprenom}}
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content padding>
+  
+  <ion-button expand="full" class ="primary" (click) = "refreshPage()">actualisation</ion-button>
+        <div class="mesgs">
+          <div class="msg_history" >
+            <div *ngFor="let message of messages">
+              
+            <div *ngIf="message.itext">
+              <div class="incoming_msg" >
+                <div class="incoming_msg_img"> <img [src]="'assets/img/noavatar.png'" /> </div>
+                <div class="received_msg">
+                  <div class="received_withd_msg">
+                    <p>{{message.itext}}</p>
+                    <span class="time_date">{{message.idate}}</span>          
+                  </div> <br>
+                </div>
+              </div>
+            </div>               
+          <div *ngIf="message.otext">
+            <div class="outgoing_msg">
+              <div class="sent_msg">
+                <p>{{message.otext}}</p>
+                <span class="time_date">{{message.odate}}</span>
+              </div>
+          </div>
+        </div>
+  
+          </div>
+  
+  
+    </div>
+  </div>
+  
+  </ion-content>
+  <ion-footer>
+      <ion-toolbar>
+          <ion-buttons slot="start">
+        </ion-buttons>
+        <ion-textarea id="IMsg2Send" class="message-input" placeholder="Tapez votre message" rows="1" autocapitalize="off" [(ngModel)]="Msg2Send"></ion-textarea>
+        <ion-buttons slot="end">
+          <ion-button color="primary" (click)="sendMsg();">
+            <ion-icon slot="icon-only" name="md-send"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-footer>

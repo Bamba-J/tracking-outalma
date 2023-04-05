@@ -1,0 +1,97 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Réexpédition</ion-title>
+      </ion-toolbar>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-back-button text="Retour" (click)= "goback()"></ion-back-button>
+        </ion-buttons>
+    <ion-title>Réexpédition</ion-title>
+  </ion-toolbar>
+  <script>
+  </script>
+</ion-header>
+
+<ion-content padding>
+
+<div class="encadre">
+  <ion-item (click)="setColor('#Iprenom')" style="background-color:red !important;">
+    <ion-label position="floating">Prénom :</ion-label>
+    <ion-input id="Iprenom" clearInput [(ngModel)]="Prenom" class="inputer centered"></ion-input>
+  </ion-item>
+  <ion-item (click)="setColor('#Inom')">
+      <ion-label position="floating">Nom :</ion-label>
+      <ion-input id="Inom" clearInput [(ngModel)]="Nom" class="inputer centered"></ion-input>
+  </ion-item>
+
+  <ion-item (click)="setColor('#Itelephone')">
+    <ion-label position="floating">Téléphone :</ion-label>
+    <ion-input id="Itelephone" clearInput [(ngModel)]="Telephone" class="inputer centered"></ion-input>
+  </ion-item>
+</div>
+<div class="encadre">
+  <ion-item class="rd_postal" (click)="setColor('#Inum_colis')">
+      <ion-label position="floating">Numéro de colis :</ion-label>
+      <ion-input id="Inum_colis" clearInput [(ngModel)]="Num_colis" class="inputer centered"></ion-input>
+    </ion-item>  
+    <ion-item class="rd_postal" (click)="setColor('#Inum_com')">
+      <ion-label position="floating">Numéro de commande :</ion-label>
+      <ion-input  id="Inum_com" clearInput [(ngModel)]="Num_commande" class="inputer centered"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label >Description du colis :</ion-label>
+    </ion-item>
+    <ion-item class="txtliens" (click)="setColor('#Idesc_colis')">
+      <ion-textarea id="Idesc_colis" [(ngModel)]="Desc_colis" margin="1vh" placeholder="Veuillez entrer les informations de poids, de volume, et le type d'articles à envoyer afin d'établir un devis."></ion-textarea>
+    </ion-item>
+    <ion-item  (click)="setColor('#Iad_website')">
+      <ion-label position="floating">Site de provenance de la commande :</ion-label>
+      <ion-input id="Iad_website" clearInput [(ngModel)]="Ad_website" class="inputer centered"></ion-input>
+    </ion-item>
+    
+    <ion-item >
+      <ion-label >Date de livraison en agence :</ion-label>
+    </ion-item>
+    <ion-item (click)="setColor('#Idate_liv')" class="rd_postal">
+      <ion-input id="Idate_liv" [(ngModel)]="Date_livraison"  type="date" clearInput></ion-input>
+      <!-- <ion-datetime id="Idate_liv" [(ngModel)]="Date_livraison" display-format="DD/MM/YYYY" picker-format="D MMMM YYYY" cancelText="" doneText="Ok"></ion-datetime> -->
+    </ion-item>
+  </div>
+  <div class="encadre">
+    <ion-item>
+      <fieldset>
+       <p expand="full" position="floating" class="rd_nbr">Type d'envoi : 2 à 4 jours ouvrés si envoie express, 4 à 8 jours ouvrés si envoie économique, 
+          21 jours ouvrés: si envoi par bateau. PS: les délai s'applique à partir de la réception du colis dans notre agence de Paris
+        </p>
+     </fieldset>
+    </ion-item>
+  <ion-item name="sendtype" (click)="setColor('#Itype_envoi')">
+    <ion-select  id="Itype_envoi" interface="popover" [(ngModel)]="Type_envoi" value="Bateau" placeholder="" class="ddl rd_name" min-width="100vh"  okText="Ok" cancelText="Annuler">
+         <ion-select-option class="ddl" value="Bateau">Envoi par bateau</ion-select-option>
+         <ion-select-option class="ddl" value="Avion express">Envoi par avion express</ion-select-option>
+         <ion-select-option class="ddl" value="Avion économique">Envoi par avion économique</ion-select-option>
+     </ion-select> 
+    </ion-item>
+    
+  <ion-item *ngIf="!alive" class="" (click)="setColor('#Iad_rue')">
+    <ion-label position="floating">Livrer à l'adresse :</ion-label>
+    <ion-input  id="Iad_rue" clearInput [(ngModel)]="Ad_rue" class="inputer centered"></ion-input>
+  </ion-item>
+  <ion-item *ngIf="!alive" class="rd_postal" (click)="setColor('#Iad_postal')">
+      <ion-label position="floating">Code postal :</ion-label>
+      <ion-input id="Iad_postal" clearInput [(ngModel)]="Ad_postal" class="inputer centered"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!alive" class="rd_postal" (click)="setColor('#Iad_pays')">
+      <ion-label position="floating">Pays :</ion-label>
+      <ion-input id="Iad_pays" clearInput [(ngModel)]="Ad_pays" class="inputer centered"></ion-input>
+    </ion-item>
+    </div>
+
+    <br>
+    <!-- OBLIGATOIRE (descritpion du colis, adresse renseignée sur le site, site de provenance, type d'envoi (par avion/ bateau), adresse de livraison finale)
+    FACULTATIF (numéro de colis, numéro de commande, date de livraison estimée) -->  
+    <ion-button (click)="checkAg()">
+      Enregistrer
+    </ion-button>
+</ion-content>
+

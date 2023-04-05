@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-title>Achat en ligne</ion-title>
+    </ion-toolbar>
+<ion-toolbar color="primary">
+    <ion-buttons slot="start">
+        <ion-back-button text="Retour" (click)= "goback()"></ion-back-button>
+      </ion-buttons>
+  <ion-title>Achat en ligne</ion-title>
+</ion-toolbar>
+</ion-header>
+
+<ion-content padding>   <!--onload='testload()'> -->
+
+<div class="encadre">
+  <ion-item (click)="setColor('#Iprenom2')">
+    <ion-label position="floating">Prénom :</ion-label>
+    <ion-input id="Iprenom2" required clearInput [(ngModel)]="Prenom2" class="inputer centered"></ion-input>
+  </ion-item>
+  <!-- <ion-item>
+    <ion-label>lol :</ion-label>
+    <ion-input [(ngModel)]="dataToAdd"></ion-input>
+  </ion-item>
+  <ion-button (click)="addData()">Add data</ion-button> -->
+  
+  <ion-item (click)="setColor('#Inom2')">
+      <ion-label position="floating">Nom :</ion-label>
+      <ion-input id="Inom2" required clearInput [(ngModel)]="Nom2" class="inputer centered"></ion-input>
+  </ion-item>
+
+  <ion-item (click)="setColor('#Itelephone2')">
+    <ion-label position="floating">Téléphone :</ion-label>
+    <ion-input id="Itelephone2" required clearInput [(ngModel)]="Telephone2" class="inputer centered"></ion-input>
+  </ion-item>
+</div>
+<div class="encadre">
+<ion-item>
+  <ion-label>Collez les liens des objets que vous désirez acheter :</ion-label>
+</ion-item>
+<ion-item class="txtliens" (click)="setColor('#Iliens2')">
+  <ion-textarea id="Iliens2" required [(ngModel)]="Liens2" margin="1vh"></ion-textarea>
+</ion-item>
+
+<ion-item *ngIf="!alive" (click)="setColor('#Iad_rue2')">
+  <ion-label position="floating">Livrer à l'adresse :</ion-label>
+  <ion-input id="Iad_rue2" required clearInput [(ngModel)]="Ad_rue2" class="inputer centered"></ion-input>
+</ion-item>
+
+<ion-item *ngIf="!alive" class="rd_postal" (click)="setColor('#Iad_postal')">
+    <ion-label position="floating">Code postal :</ion-label>
+    <ion-input id="Iad_postal2" required clearInput [(ngModel)]="Ad_postal2" class="inputer centered"></ion-input>
+  </ion-item>
+  <ion-item *ngIf="!alive" class="rd_postal" (click)="setColor('#Iad_pays2')">
+    <ion-label position="floating">Pays :</ion-label>
+    <ion-input id="Iad_pays2" required clearInput [(ngModel)]="Ad_pays2" class="inputer centered"></ion-input>
+  </ion-item>
+
+  
+<ion-item>
+    <fieldset>
+     <p expand="full" position="floating" class="rd_nbr">Type d'envoi : 2 à 4 jours ouvrés si envoie express, 4 à 8 jours ouvrés si envoie économique, 
+        21 jours ouvrés: si envoi par bateau. PS: les délai s'applique à partir de la réception du colis dans notre agence de Paris
+      </p>
+   </fieldset>
+  </ion-item>
+<ion-item name="sendtype" (click)="setColor('#Itype_envoi')">
+  <ion-select  id="Itype_envoi" interface="popover" [(ngModel)]="Type_envoi" value="Bateau" placeholder="" class="ddl rd_name" min-width="100vh"  okText="Ok" cancelText="Annuler">
+       <ion-select-option class="ddl" value="Bateau">Envoi par bateau</ion-select-option>
+       <ion-select-option class="ddl" value="Avion express">Envoi par avion express</ion-select-option>
+       <ion-select-option class="ddl" value="Avion économique">Envoi par avion économique</ion-select-option>
+   </ion-select> 
+  </ion-item>
+
+</div>
+
+
+
+  
+  <br>
+  <ion-button (click)="checkAg2()">
+    Enregistrer
+  </ion-button>
+</ion-content>
+

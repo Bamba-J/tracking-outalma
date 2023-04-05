@@ -1,0 +1,72 @@
+:host{
+    ion-input {
+        border-bottom : 1px solid darkgrey;
+    }
+
+    .hiden {
+        display: none;
+      }
+
+    .ddl{
+        min-width:100vh !important;
+    }
+
+    .rd_nbr{
+        display: inline-block;
+        width: 500px;
+        height: 30px;
+    }
+    .rd_name{
+        display: inline-block;
+        width: 70%;
+    }
+    .rd_postal{
+        display: inline-block;
+        width: 50%;
+    }
+    .rd_date{
+        display: inline-block;
+        width: 30%;
+    }
+    .encadre{
+        border: 2px solid #343582;
+        border-radius: 1em;
+        padding:1%;
+        margin-bottom: 2%;
+    }
+    .inputer{
+        // background: #fff;
+        color: #525865;
+        border-radius: 4px;
+        border: 1px solid #d1d1d1;
+        box-shadow: inset 1px 2px 8px rgba(0, 0, 0, 0.07);
+        font-family: inherit;
+        font-size: 1em;
+        line-height: 1.45;
+        outline: none;
+        padding: 0.6em 1.45em 0.7em;
+        -webkit-transition: .18s ease-out;
+        -moz-transition: .18s ease-out;
+        -o-transition: .18s ease-out;
+        transition: .18s ease-out;
+    }
+    .inputer:hover {
+      box-shadow: inset 1px 2px 8px rgba(0, 0, 0, 0.02);
+    }
+    .inputer:focus {
+      color: #4b515d;
+      border: 1px solid #B8B6B6;
+      box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.01), 0px 0px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .item-interactive, .item-lines-full {
+        --border-width: 0 0 0px 0;
+        --show-full-highlight: 1;
+        --show-inset-highlight: 0;
+    }
+    .item-interactive.ion-touched.ion-invalid, .item-interactive.item-has-focus {
+        --full-highlight-height:0px;
+        --inset-highlight-height:0px;
+    }
+    
+}

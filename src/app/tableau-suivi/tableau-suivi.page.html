@@ -1,0 +1,71 @@
+
+ <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+ <ion-header>
+   <ion-toolbar>
+     <ion-title>Tableau-suivi</ion-title>
+   </ion-toolbar>
+</ion-header>
+
+<ion-content id='contains2' padding>
+  <ion-searchbar (ionInput)="getItems($event)" placeholder="Rechercher dans le tableau"></ion-searchbar>
+  <ion-button color= "primary"  (click)="getItems()">   ensemble  </ion-button>
+  <ion-button  color ="danger" (click)="getItems2()">attente </ion-button>
+  <ion-button color ="success"  (click)="getItems3()"> livrés </ion-button>
+ 
+  
+  <br>
+     <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Mise à jour</th>
+            <th scope="col">Statut</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr  *ngFor="let s of suivis" >
+           
+          <th (click)="Facture(s.id,s.Ad_pay_e,s.Ad_rue_e,s.Ad_pos_e, s.Ad_pay_l,s.Ad_rue_l,s.Ad_pos_l,s.Desc_colis,s.Site_prov,s.Telephone,s.Liste_envies,s.Type_envoi,s.Nom,s.Prenom)" scope="row">{{s.id + 1}}</th>
+          <td (click)="Facture(s.id,s.Ad_pay_e,s.Ad_rue_e,s.Ad_pos_e, s.Ad_pay_l,s.Ad_rue_l,s.Ad_pos_l,s.Desc_colis,s.Site_prov,s.Telephone,s.Liste_envies,s.Type_envoi,s.Nom,s.Prenom)">{{ s.Nom +' '+ s.Prenom}}</td>
+          <td (click)="Facture(s.id,s.Ad_pay_e,s.Ad_rue_e,s.Ad_pos_e, s.Ad_pay_l,s.Ad_rue_l,s.Ad_pos_l,s.Desc_colis,s.Site_prov,s.Telephone,s.Liste_envies,s.Type_envoi,s.Nom,s.Prenom)">{{ s.Date_crea }}</td>
+          <td (click)="Facture(s.id,s.Ad_pay_e,s.Ad_rue_e,s.Ad_pos_e, s.Ad_pay_l,s.Ad_rue_l,s.Ad_pos_l,s.Desc_colis,s.Site_prov,s.Telephone,s.Liste_envies,s.Type_envoi,s.Nom,s.Prenom)">{{ s.Etat }}</td>
+          <td>
+            <ion-button (click)="goToChat(s.id,s.Ad_pay_e,s.Ad_rue_e,s.Ad_pos_e, s.Ad_pay_l,s.Ad_rue_l,s.Ad_pos_l,s.Desc_colis,s.Site_prov,s.Telephone,s.Liste_envies,s.Type_envoi)">Chat</ion-button></td>
+          <td>    
+      <!-- <ion-button (click)="Facture(s.id,s.Nom,s.Prenom)">Facture</ion-button> -->
+      <ion-button (click)="goToDevis(s.id,s.Ad_pay_e,s.Ad_rue_e,s.Ad_pos_e, s.Ad_pay_l,s.Ad_rue_l,s.Ad_pos_l,s.Desc_colis,s.Site_prov,s.Telephone,s.Liste_envies,s.Type_envoi,s.Nom,s.Prenom)">Devis</ion-button></td>
+        </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+       <div class="d-flex justify-content-between p-2" > 
+       <button type="button" class="btn marg" (click)="Switch2Page('backward')"> << </button> 
+        <ion-label>{{ page }}</ion-label>
+        <button type="button" class="btn marg" (click)="Switch2Page('forward')"> >> </button> 
+  
+    
+        <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (change)="selectChanged()">
+          <option [ngValue]="2">2 lignes par page</option>
+          <option [ngValue]="4">4 lignes par page</option>
+          <option [ngValue]="6">6 lignes par page</option>
+        </select>
+      </div> 
+     <!-- <ion-button (click)="CreateInp()">Chat</ion-button>
+      <ion-button (click)="GetValInpu()">Chat</ion-button>-->
+
+   
+</ion-content>
+
+
+
+

@@ -1,0 +1,54 @@
+:host{
+    .encadre{
+        border: 2px solid #343582;
+        border-radius: 1em;
+        padding:1%;
+        margin-bottom: 2%;
+        z-index:100000000000;
+    }
+    div.item-native {
+        background: none !important;
+        background-color: none !important;
+        z-index: 10;
+        border-radius: 3em;
+    }
+    .itema {
+        background: none !important;
+        background-color: none !important;
+        border-radius: 3em;
+    }
+    .inputer{
+        // background: #fff;
+        color: #525865;
+        border-radius: 4px;
+        border: 1px solid #d1d1d1;
+        box-shadow: inset 1px 2px 8px rgba(0, 0, 0, 0.07);
+        font-family: inherit;
+        font-size: 1em;
+        line-height: 1.45;
+        outline: none;
+        padding: 0.6em 1.45em 0.7em;
+        -webkit-transition: .18s ease-out;
+        -moz-transition: .18s ease-out;
+        -o-transition: .18s ease-out;
+        transition: .18s ease-out;
+    }
+    .inputer:hover {
+      box-shadow: inset 1px 2px 8px rgba(0, 0, 0, 0.02);
+    }
+    .inputer:focus {
+      color: #4b515d;
+      border: 1px solid #B8B6B6;
+      box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.01), 0px 0px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .item-interactive, .item-lines-full {
+        --border-width: 0 0 0px 0;
+        --show-full-highlight: 1;
+        --show-inset-highlight: 0;
+    }
+    .item-interactive.ion-touched.ion-invalid, .item-interactive.item-has-focus {
+        --full-highlight-height:0px;
+        --inset-highlight-height:0px;
+    } 
+}

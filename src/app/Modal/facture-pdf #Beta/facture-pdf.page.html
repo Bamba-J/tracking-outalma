@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script type="text/javascript" src="../../dllForPDF/jspdf.debug.js"></script>
+<script type="text/javascript" src="../../dllForPDF/basic.js"></script>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>FacturePDF</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+ 
+<div style="border-width: 2px; border-style: dotted; padding: 1em; font-size:120%;line-height: 1.5em;" id="fromHTMLtestdiv">
+
+   <img src="img/logo-full.png" >
+   <br><br>
+   <!-- <p><h2>HOMEBOX OUTALMA,</h2></p> -->
+   <p>8 Place Boulnois,</p>
+   <p>75017 Paris</p>
+   <p>Tel:+33 (0) 7 68 10 36 79</p>
+   
+     <div style="text-align:end" class="container">
+       <!-- <h2 id="nom"><SCRIPT LANGUAGE="Javascript">
+          function getURLParameter(name) {
+     return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
+    }var nomnomononnnoonn = this.getURLParameter('a');
+         document.write(nomnomononnnoonn);
+         
+         </SCRIPT></h2> -->
+       <p>139 rue de l'Ourcq,</p>
+       <p>75019,</p>
+       <p>Paris</p>
+       <table class="table">
+         <thead class="thead-dark">
+           <tr>
+             <th>FACTURE</th>
+           </tr>
+         </thead>
+       </table>
+       <table class="table">
+         <thead class="thead-light">
+           <tr>
+             <th>Article</th>
+             <th>Nombre</th>
+             <th>Prix</th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr>
+             <td>LCD Portable</td>
+             <td>4</td>
+             <td>499 €</td>
+           </tr>
+           <tr>
+             <td>iPhone</td>
+             <td>1</td>
+             <td>1269 €</td>
+           </tr>
+           <tr>
+             <td>Sac LV</td>
+             <td>9</td>
+             <td>100000 €</td>
+           </tr>
+         </tbody>
+       </table>
+     </div>
+   <h2></h2>
+   <h2></h2>
+   <p>
+     <button onclick="javascript:demoFromHTML()" class="button">Télécharger le PDF</button>
+     <button onclick="javascript:window.print()" class="button">Imprimer le PDF</button>
+    </p>
+   <button onclick="javascript:window.close()" class="button">Fermer cette fenêtre</button>
+   </div>
+</ion-content>

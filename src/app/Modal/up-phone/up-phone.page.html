@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="close()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Modifier mon numéro de télephone</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <form [formGroup]="authForm" >
+
+    <ion-item>
+      <ion-label><ion-icon name="call"></ion-icon>&nbsp;<ion-icon name="add"></ion-icon></ion-label>
+      <ion-input placeholder="Ancien numéro (ex : 33123456789)" type="number" formControlName="phoneNumber" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label><ion-icon ios="ios-mail" md="md-mail"></ion-icon></ion-label>
+          <ion-input placeholder="Email" type="email" formControlName="email" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><ion-icon ios="ios-unlock" md="md-unlock"></ion-icon></ion-label>
+      <ion-input minlength="6" [formControl]="password" id="password" type="{{passwordtype}}" required placeholder="Mot de passe"></ion-input>
+      <button ion-button fill="clear" class="eye-icon-btn buttoneye" type="button" item-right (click)="managePassword()">
+        <ion-icon name="{{passeye}}"></ion-icon></button>
+    </ion-item>
+      <div id="recaptcha-container" ></div>
+      <ion-item>
+        <ion-label><ion-icon name="call"></ion-icon>&nbsp;<ion-icon name="add"></ion-icon></ion-label>
+        <ion-input placeholder="Nouveau numéro (ex : 33123456789)" type="number" formControlName="NewphoneNumber" clearInput></ion-input>
+      </ion-item>
+  </form>
+</ion-content>
+<ion-toolbar color="primary">
+  <ion-button expand="block" type="submit" (click)="ionViewDidLoad(); onSubmitForm()">Modifier mon numéro de télephone</ion-button>
+</ion-toolbar>

@@ -1,0 +1,42 @@
+
+<ion-header>
+    <ion-toolbar>
+      </ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-title >Suivi</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+<ion-content class="quai" padding>
+
+    <ion-card *ngFor="let s of suivi"  [class]="s.Priorite" >
+        <ion-item>
+          <ion-icon [name]="s.icon" size="large" class="broown" slot="start"></ion-icon>
+          <ion-card-subtitle  size="100%">{{s.Atype}} #{{s.id}}</ion-card-subtitle>
+          <ion-button *ngIf="s.Atype==='Colis'" (click)="goToPDF(s.id)">Facture</ion-button>
+          <ion-button *ngIf="s.Etat==='En attente de validation du devis'" (click)="goToPDF(s.id)">Devis</ion-button>
+          <ion-button *ngIf="s.Etat==='En attente de validation du devis'" (click)="Accepter(s.id)">Accepter le devis</ion-button>
+          <ion-card-subtitle slot="end">{{s.Date_crea}}</ion-card-subtitle>
+          
+        </ion-item>
+        <ion-button (click)="goToChat(s.id,s.Ad_pay_e,s.Ad_rue_e,s.Ad_pos_e, s.Ad_pay_l,s.Ad_rue_l,s.Ad_pos_l,s.Desc_colis,s.Site_prov,s.Telephone,s.Liste_envies,s.Type_envoi)" Expand="full" fill="clear">
+        <ion-card-content >
+          {{s.Etat}}
+        </ion-card-content></ion-button>
+      <ion-button (click)="delete(s.id)" expand="full" color="danger">supprimer la demande</ion-button>
+      </ion-card>
+      <ion-card *ngIf="suite==-1"  [class]="s.Priorite" >
+        <ion-item>
+          <ion-icon size="large" class="broown" slot="start"></ion-icon>
+          <ion-card-subtitle size="100%">Vous n'avez pas encore effectué de demande de livraison, veuillez effectuer une livraison afin de commencer un suivi.</ion-card-subtitle>
+          
+        </ion-item>
+        <ion-button (click)="goToDemande()" Expand="full" fill="clear">
+        <ion-card-content >
+         Faire une demande de livraison
+        </ion-card-content></ion-button>
+      </ion-card>
+</ion-content>

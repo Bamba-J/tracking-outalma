@@ -1,0 +1,48 @@
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/^1.12.2/themes/prism.css" />
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Formulaire de satisfaction</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  
+
+
+  <form>
+    <ion-list *ngFor="let p of question">
+
+          <ion-list-header>
+            <ion-label>{{p.question}}</ion-label>
+          </ion-list-header>
+      
+          <ngb-rating [(rate)]="p.reponse">
+            <ng-template let-fill="fill" let-index="index">
+              <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+            </ng-template>
+          </ngb-rating>
+          <hr>
+          <!-- <pre>Rate: <b>{{p.reponse}}</b></pre> -->
+        </ion-list>
+        <br>
+    <ion-item>
+      <ion-label position="floating">Sur l’ensemble de votre livraison quel a été le point le plus positif ?
+        </ion-label>
+      <ion-textarea clearInput></ion-textarea>
+    </ion-item>
+    <br>
+    <ion-item>
+        <ion-label position="floating">Sur l’ensemble de votre livraison quel a été le point le plus négatif ?
+          </ion-label>
+        <ion-textarea clearInput></ion-textarea>
+      </ion-item>
+      <br>
+      <ion-button type="submit" (click)="Send()" block>Enregistrer</ion-button>
+  </form>
+
+  
+</ion-content>

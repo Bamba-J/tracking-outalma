@@ -1,0 +1,44 @@
+
+ 
+     <ion-content *ngIf="isAuth">
+     <ion-header>
+          <ion-toolbar color="primary">
+              <ion-buttons slot="start">
+                  <ion-menu-button></ion-menu-button>
+                </ion-buttons>
+            <ion-title>
+            <!-- <ion-img src="/assets/img/logo-white.png" class="logo"></ion-img> -->
+            <ion-label >Tracking</ion-label>
+            </ion-title>
+          </ion-toolbar>
+        </ion-header>
+        <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+          <ion-refresher-content
+            pullingIcon="arrow-dropdown"
+            pullingText="Tirer pour rafraîchir"
+            refreshingSpinner="circles"
+            refreshingText="Rechargement en cours...">
+          </ion-refresher-content>
+        </ion-refresher>
+      
+
+
+  <ion-tabs >
+
+    <ion-tab-bar slot="bottom" color="primary">
+
+  
+      <ion-tab-button  color="primary" tab="faq" >
+        <ion-icon name="chatboxes"></ion-icon>
+        <ion-label>Questions fréquentes</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button  color="primary" tab="tab3">
+          <ion-img src="/assets/img/logo-white.png" class="logotalma"></ion-img>
+        <ion-label>À propos d'Outalma</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content> 
+
+

@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="close()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Inscription</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="!isAuth" padding class="bg">
+  <form [formGroup]="authForm" >
+      <ion-item class="{{faux3}}">
+        <ion-label><ion-icon ios="ios-person" md="md-person"></ion-icon></ion-label>
+          <ion-input placeholder="Nom de famille" type="text" autocomplete="true" [formControl]="nom" clearInput></ion-input>
+    </ion-item>
+    <ion-item class="{{faux2}}">
+      <ion-label><ion-icon ios="ios-person" md="md-person"></ion-icon></ion-label>
+        <ion-input placeholder="Prénom" type="text" autocomplete="true" [formControl]="prenom" clearInput></ion-input>
+  </ion-item>
+    <ion-item class="{{faux4}}">
+      <ion-label><ion-icon name="call"></ion-icon>&nbsp;<ion-icon name="add"></ion-icon></ion-label>
+      <ion-input patern="[0-9]{1-11}" type="tel" inputmode="tel" placeholder="ex : 33123456789" type="text" autocomplete="true"  [formControl]="phoneNumber" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label><ion-icon ios="ios-mail" md="md-mail"></ion-icon></ion-label>
+          <ion-input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" inputmode="email" placeholder="Email" type="email" [formControl]="email" autocomplete="true" clearInput></ion-input>
+    </ion-item>
+    <ion-item class="{{faux5}}">
+        <ion-label><ion-icon name="calendar"> </ion-icon>&nbsp;&nbsp;Date de naissance :</ion-label><ion-input placeholder="Date de naissance" type="date" [formControl]="date" autocomplete="true"  required clearInput></ion-input>
+    </ion-item>
+    <ion-item class="{{faux}}">
+      <ion-label><ion-icon ios="ios-unlock" md="md-unlock"></ion-icon></ion-label>
+      <ion-input [formControl]="password" id="password" type="{{passwordtype}}" required placeholder="Mot de passe" clearInput></ion-input>
+      <button ion-button fill="clear" autocomplete="true"  class="eye-icon-btn buttoneye" type="button" item-right (click)="managePassword()">
+        <ion-icon name="{{passeye}}"></ion-icon></button>
+    </ion-item>
+    <ion-item class="{{faux1}}">
+      <ion-label><ion-icon ios="ios-unlock" md="md-unlock"></ion-icon></ion-label>
+      <ion-input [formControl]="password2" id="password2" type="{{passwordtype2}}" required placeholder="Confirmer le mot de passe" clearInput></ion-input>
+      <button  ion-button fill="clear" autocomplete="true"  class="eye-icon-btn buttoneye" type="button" item-right (click)="managePassword2()">
+        <ion-icon name="{{passeye2}}"></ion-icon></button>
+    </ion-item> 
+
+      <div id="recaptcha-container" ></div>
+
+  </form>
+</ion-content>
+
+<!-- <ion-toolbar color="primary"> -->
+  <ion-button expand="block" type="submit" (click)="ionViewDidLoad(); onSubmitForm()">CRÉER UN COMPTE</ion-button>
+<!-- </ion-toolbar> -->

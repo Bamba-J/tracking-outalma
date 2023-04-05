@@ -1,0 +1,43 @@
+ <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<head>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet">
+</head> -->
+  <ion-header>
+    <ion-toolbar></ion-toolbar>
+      <ion-toolbar color="primary">
+        <ion-title >Chat</ion-title>
+      </ion-toolbar>
+  </ion-header>
+  <ion-content padding>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content
+        pullingIcon="arrow-dropdown"
+        pullingText="Tirer pour rafraîchir"
+        refreshingSpinner="circles"
+        refreshingText="Rechargement en cours...">
+      </ion-refresher-content>
+    </ion-refresher>
+    <ion-button (click)="ngOnInit()">Actualiser la page</ion-button>
+      <ion-card>
+
+            <ion-item  *ngFor="let m of users" (click)="goToChat(m.ID)" class="activated">
+                <div  slot="start" class="bonbon">
+                  <div class="avatar-circle">
+                      <span class="initials" color = "primary">{{m.Prenom.charAt(0)}} {{m.Nom.charAt(0)}}</span>
+                    </div>&nbsp;&nbsp;&nbsp;
+                  </div>
+                  <ion-card-subtitle color="dark"><strong>
+                     {{m.Nom}} {{m.Prenom}}</strong><br />
+                  </ion-card-subtitle> 
+                  
+                   <ion-card-subtitle  style="padding: 2%"> {{Jcroiscstbn(m.ID)}} 
+                  </ion-card-subtitle> 
+                  <!--<ion-label color = "danger" *ngIf =" message != lastMessageRecu ">{{nombre}}</ion-label>-->
+              </ion-item>
+        </ion-card>
+        
+  
+
+  </ion-content>

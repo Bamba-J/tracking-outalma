@@ -1,0 +1,9 @@
+{
+  "name": "Outalma",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "9f885dc4"
+}

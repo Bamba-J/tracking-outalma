@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="close()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Mes informations</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <form>
+    <div class="encadre">
+<ion-item>
+  <ion-label position="floating"  >Nom</ion-label>
+  <ion-input class="inputer" (keydown)="ecris()"  [(ngModel)]="nom" [ngModelOptions]="{standalone: true}" clearInput></ion-input>
+</ion-item>
+<ion-item>
+    <ion-label position="floating" >Prénom</ion-label>
+    <ion-input class="inputer"  [(ngModel)]="prenom" [ngModelOptions]="{standalone: true}" clearInput></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="floating" pattern="tel" >Numéro de téléphone</ion-label>
+    <ion-input class="inputer" type="number" [(ngModel)]="phoneNumber" ></ion-input>
+</ion-item>
+    <ion-item>
+      <ion-label position="floating" pattern="email" >E-mail</ion-label>
+      <ion-input class="inputer" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" inputmode="email" clearInput [(ngModel)]="email" [ngModelOptions]="{standalone: true}" ></ion-input>
+  </ion-item>
+</div>
+<div class="encadre">
+<ion-item>
+    <ion-label position="floating">Adresse d'expédition</ion-label>
+    <ion-input class="inputer"  [(ngModel)]="adresse" placeholder="adresse" [ngModelOptions]="{standalone: true}" clearInput  ></ion-input>
+    <ion-input class="inputer"  [(ngModel)]="code" placeholder="Code postal" [ngModelOptions]="{standalone: true}" clearInput  ></ion-input>
+    <ion-input class="inputer"  [(ngModel)]="pays"  placeholder="Pays" [ngModelOptions]="{standalone: true}" clearInput  ></ion-input>
+
+</ion-item>
+
+<ion-item >
+  <ion-label position="floating">Adresse de livraison</ion-label>
+  <ion-input class="inputer"  [(ngModel)]="adresseliv" placeholder="adresse" [ngModelOptions]="{standalone: true}" clearInput  ></ion-input>
+  <ion-input class="inputer"  [(ngModel)]="codeliv" placeholder="Code postal" [ngModelOptions]="{standalone: true}" clearInput  ></ion-input>
+  <ion-input class="inputer"  [(ngModel)]="paysliv"  placeholder="Pays" [ngModelOptions]="{standalone: true}" clearInput  ></ion-input>
+
+</ion-item>
+</div>
+
+<br>
+<ion-button type="submit" (click)="Enregistrer()" block>Enregistrer</ion-button>
+  </form>
+  <ion-button expand="full" (click)="goToUpPhone()" block>Mettre à jour mon numéro téléphone</ion-button>
+  <ion-button expand="full" (click)="goToUpPassword()" block>Modifier mon mot de passe</ion-button>
+</ion-content>

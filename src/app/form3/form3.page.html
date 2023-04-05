@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-title>Enlèvement</ion-title>
+    </ion-toolbar>
+<ion-toolbar color="primary">
+    <ion-buttons slot="start">
+        <ion-back-button text="Retour" (click)= "goback()"></ion-back-button>
+      </ion-buttons>
+  <ion-title>Enlèvement</ion-title>
+</ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <div class="encadre">
+  <ion-item (click)="setColor('#Iprenom3')">
+    <ion-label position="floating">Prénom :</ion-label>
+    <ion-input id="Iprenom3" clearInput [(ngModel)]="Prenom3" class="inputer centered"></ion-input>
+  </ion-item>
+  
+  <ion-item (click)="setColor('#Inom3')">
+      <ion-label position="floating">Nom :</ion-label>
+      <ion-input id="Inom3" clearInput [(ngModel)]="Nom3" class="inputer centered"></ion-input>
+  </ion-item>
+
+  <ion-item (click)="setColor('#Itelephone3')">
+    <ion-label position="floating">Téléphone :</ion-label>
+    <ion-input id="Itelephone3" clearInput [(ngModel)]="Telephone3" class="inputer centered"></ion-input>
+  </ion-item>
+</div>
+  <div class="encadre">
+    <ion-item>
+      <ion-label >Description du colis :</ion-label>
+    </ion-item>
+    <ion-item class="txtliens" (click)="setColor('#Idesc_colis')">
+      <ion-textarea id="Idesc_colis" [(ngModel)]="Desc_colis" margin="1vh" placeholder="Veuillez entrer les informations de poids, de volume, et le type d'articles à envoyer afin d'établir un devis."></ion-textarea>
+    </ion-item>
+
+  <ion-item *ngIf="!alive0" class="rd_name" (click)="setColor('#Iad_rue_e3')">
+    <ion-label position="floating">Enlèvement à l'adresse :</ion-label>
+    <ion-input id="Iad_rue_e3" clearInput [(ngModel)]="Ad_rue_E3" class="inputer centered"></ion-input>
+  </ion-item>
+  <ion-item *ngIf="!alive0" class="rd_postal" (click)="setColor('#Iad_postal_e3')">
+      <ion-label position="floating">Code postal :</ion-label>
+      <ion-input id="Iad_postal_e3" clearInput [(ngModel)]="Ad_postal_E3" class="inputer centered"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!alive0" class="rd_postal" (click)="setColor('#Iad_pays_e3')">
+      <ion-label position="floating">Pays :</ion-label>
+      <ion-input id="Iad_pays_e3" clearInput [(ngModel)]="Ad_pays_E3" class="inputer centered"></ion-input>
+    </ion-item>
+  
+
+<ion-item *ngIf="!alive" class="rd_name" (click)="setColor('#Iad_rue_l3')">
+  <ion-label position="floating">Livraison à l'adresse :</ion-label>
+  <ion-input id="Iad_rue_l3" clearInput [(ngModel)]="Ad_rue_L3" class="inputer centered"></ion-input>
+</ion-item>
+<ion-item *ngIf="!alive" class="rd_postal" (click)="setColor('#Iad_postal_l3')">
+    <ion-label position="floating">Code postal :</ion-label>
+    <ion-input id="Iad_postal_l3" clearInput [(ngModel)]="Ad_postal_L3" class="inputer centered"></ion-input>
+  </ion-item>
+  <ion-item class="rd_postal" (click)="setColor('#Iad_pays_l3')">
+    <ion-label position="floating">Pays :</ion-label>
+    <ion-input id="Iad_pays_l3" clearInput [(ngModel)]="Ad_pays_L3" class="inputer centered"></ion-input>
+  </ion-item>
+
+  </div>
+  <ion-button (click)="checkAg3()">
+    Enregistrer
+  </ion-button>
+</ion-content>
+

@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title >Nouvelle Demande</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+
+  <ion-list lines="none" class="itlist">
+    <hr>
+    <ion-button class="choix" (click)="goToForm1()" fill="clear">
+      <ion-icon slot="start" color="medium" name="archive"></ion-icon>
+      <ion-label>Faire une demande de réexpédition</ion-label>
+    </ion-button>
+    <hr>
+    <ion-button class="choix" (click)="goToForm2()" fill="clear">
+      <ion-icon slot="start" color="medium" name="archive"></ion-icon>
+      <ion-label>Faire une demande d'achat en ligne</ion-label>
+    </ion-button>
+    <hr>
+    <ion-button class="choix" (click)="goToForm3()" fill="clear">
+      <ion-icon slot="start" color="medium" name="archive"></ion-icon>
+      <ion-label>Faire une demande d'enlèvement</ion-label>
+    </ion-button>
+  </ion-list>
+
+</ion-content>
